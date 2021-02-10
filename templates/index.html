@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.min.css')}}">
+
+    <title>Quran Web</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">QURAN<span>WEB</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/bachors/Al-Quran-ID-API">API Source</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.anonkyuhuu.my.id/">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="jumbotron">
+      <div class="container">
+        <div class="jumbotron-header mb-3" align="center">
+          <img src="{{url_for('static', filename='img/kaligrafi.png')}}">
+        </div>
+        <form action="/search" method="get">
+          <div class="input-group">
+            <input type="number" class="form-control" name="no" placeholder="Masukan No Surat (ex: 1)" aria-label="Masukan No Surat (ex: 1)" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary bg-primary" type="submit" style="width: 50px;"><i class="fas fa-search text-white"></i></button>
+            </div>
+          </div>
+        <div class="social-media text-center mt-3">
+          <a href="hrrps://github.com/anonkyuhuu"><i class="fab fa-github fa-2x mr-2 text-dark"></i></a>
+          <a href="hrrps://facebook.com/anonkgans"><i class="fab fa-facebook fa-2x mr-2 text-dark"></i></a>
+          <a href="hrrps://instagram.com/anonkyuhuu_"><i class="fab fa-instagram fa-2x mr-2 text-dark"></i></a>
+          <a href="hrrps://wa.me/+6288289139807"><i class="fab fa-whatsapp fa-2x mr-2 text-dark"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- End Jumbotron -->
+
+    <div class="container">
+      <h2 class="text-center font-weight-bold text-primary text-center">Surah</h2>
+      <hr class="my-0">
+      <div class="row mt-5">
+        {% for surah in value %}
+          <div class="col-lg-4 col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <small class="d-flex self-center mr-3">{{surah.nomor}}</small>
+                  <div class="col">
+                    <div class="text-xs font-weight-bold text-uppercase mb-1"><a href="/surah/{{surah.nomor}}">{{surah.nama}}</a></div>
+                    <div class="mt-2 mb-0 text-muted text-xs">
+                      <span class="text-center mr-2">{{surah.arti}}</span>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <span class="asma text-xs text-muted"><a href="/surah/{{surah.nomor}}">{{surah.asma}}</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <footer class="footer text-center mt-3">
+      <p class="align-items-center">&copy; 2021 - Made with <i class="fas fa-heart text-danger"></i> By Anonk</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+body {
+  background: #fff;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.text-xs a {
+  text-decoration: none;
+  color: #000000
+}
+
+.navbar {
+  background: #222
+}
+
+.navbar .navbar-brand {
+  color: lime;
+  font-weight: 500;
+}
+
+.navbar .navbar-brand:hover {
+  color: lime!important;
+}
+
+.navbar .navbar-brand span {
+  color: #fff
+}
+
+.navbar button {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.navbar button span {
+  color: #000000;
+}
+
+.jumbotron {
+  background: transparent;
+}
+
+.jumbotron-header img {
+  height: 250px;
+}
+
+.form-control {
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: none!important;
+}
+
+.form-control:hover {
+  box-shadow: none;
+}
+
+.error-handle {
+  font-size: 20rem
+}
+
+.text {
+  font-size: 2rem;
+}
+
+.my-0 {
+  border: 2px solid lime;
+  width: 120px;
+}
+
+.input-group-append button {
+  border: none;
+  box-shadow: none;
+}
+
+.input-group-append button:hover {
+  box-shadow: none;
+}
+
+.card {
+  border-color: lime;
+  box-shadow: 3px, 3px 5px gray
+}
+
+.asma {
+  font-size: 30px;
+}
+
+footer.sticky-footer {
+  background: #222;
+  color: #fff;
+  padding: 1rem 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .jumbotron-header img {
+    height: 150px;
+  }
+  .error-handle {
+    font-size: 10rem;
+    margin-top: 10rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
+}
