@@ -2,7 +2,6 @@ from flask import Flask
 from flask import render_template
 from flask import url_for
 from flask import request
-import modules
 import requests
 import json
 import os
@@ -45,7 +44,6 @@ def search():
 
 
 if __name__ == '__main__':
-	for i in os.listdir("__pycache__"):
-		try: shutil.rmtree(i)
-		except: pass
+	try: shutil.rmtree("__pycache__")
+	except: pass
 	app.run(debug=True)
