@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.errorhandler(404)
 def not_found(e):
-    return render_template("404.html")
+    return render_template("404.html"), 404
 
 @app.route("/surah/<id>")
 def surah(id):
